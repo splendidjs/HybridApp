@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- iOS, 안드로이드 크롬 브라우저 용 웹앱 전체 화면 설정 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes"/>
+	<!-- iOS, 안드로이드 크롬 브라우저 용 웹클립 아이콘 설정 -->
+    <link rel="apple-touch-icon" sizes="76x76" href="my_ios_icon_76.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="my_iphone_120.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="my_ipad_152.png"/>
+    <link rel="shortcut icon" sizes="196x196" href="my_chrome_icon_196.png"/>
+
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css"/>
+    <title>Hello World</title>
+    <style>
+    /*
+      .img_style{
+        width:768px;
+      }*/
+      #logo{
+        width:176px;
+        height: 132px;
+        text-indent: -9999px;
+        /*background-image: url(http://cfile9.uf.tistory.com/image/2728DB37551F545B1A799B);*/
+        background-image: url(img/CI_TITLE.png);
+        background-repeat: no-repeat;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 10px;
+        margin-left: auto;
+      }
+      .title_style {
+			    color: #3F3C30;
+			    padding-top: 10px;
+	   }
+    </style>
+
+</head>
+
+<body>
+  <div data-role="page" id="main">
+    <div data-role="header" data-theme="b">
+        <!--<img src="icon.png" alt="" class="img_style"/>-->
+        <h2 id="logo"> 가상 대학교</h2>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview" data-filter = "true" data-inset="true">
+        <li data-role="collapsible" data-iconpros="right" data-icon= "home" >
+          <h3 class="title_style">캠퍼스이미지</h3>
+          <ul data-role="listview">
+            <li data-icon= "arrow-l" ><a href="Day3NavBar.html" rel="external">
+              <img src="img/pic_i.png" alt="" class="ui-li-thumb"/> <!--ui-li-icon -->
+              <h3 class="title_style">NAVBAR이미지</h3>
+              <p>p 엘리먼트입니다.</p>
+              <p>캠퍼스 이미지</p>
+            </a>
+            </li>
+            <li data-icon= "arrow-r" ><a href="Day3Campusimages.html" rel="external">
+              <img src="img/pic_i.png" alt="" class="ui-li-thumb"/> <!--ui-li-icon -->
+              <h3 class="title_style">FOTORAMA이미지</h3>
+              <p>p 캠퍼스이미지목록</p>
+            </a>
+            </li>
+          </ul>
+        </li>
+        <li data-icon= "arrow-l" ><a href="Day3UniversiyIntro.html" rel="external">
+              <img src="img/intro_i.png" alt="" class="ui-li-thumb"/>
+              <h3 class="title_style">대학교소개</h3>
+          </a>
+        </li>
+        <li><a href="Day4UniversitVideo.html" rel="external">
+                <img src="img/movie_i.png" alt="" class="ui-li-thumb"/>
+                <h3 class="title_style">홍보동영상</h3>
+          </a>
+        </li>
+        <li><a href="Day4UniversityMap.html" rel="external">
+                <img src="img/map_i.png" alt="" class="ui-li-thumb" />
+                <h3 class="title_style">캠퍼스맵</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 테스트용도
+  <div data-role="page" id="campus-images" class="gallery-page">
+    <div data-role="header">
+      <a href="#main" data-icon="home" data-direction="reverse" class=""ui-btn-left>Home </a>
+      <h1> 캠퍼스 이미지</h1>
+    </div>
+  </div>
+
+
+  <div data-role="page" id="intro">
+    <div data-role="header" data-theme = "b">
+      <a href="#main" data-icon="home" data-direction="reverse" class=""ui-btn-left>Home </a>
+      <h1> 대학교 소개</h1>
+    </div>
+    <div data-role="content" data-theme = "c">
+      <img class="small" id="pic_univ" src="img/thumb/ca01.jpg" alt="소개">
+      <h1> <strong class ="bold_sytle"> 시대정신 </strong>을 선도하는 열린 하문 공동체 입니다.</h1>
+      <div class ="clear_both">
+        <p> 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+
+        </p>
+        <p> 마무리
+        </p>
+      </div>
+    </div>
+    <div data-role="footer">
+        <h2>버추얼 대학교</h2>
+    </div>
+  </div>
+  -->
+  <script type="text/javascript" src="phonegap.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+      app.initialize();
+  </script>
+
+
+
+    <script src="jquery.mobile-1.4.5/demos/js/jquery.js"></script>
+    <script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+
+</body>
+
+</html>

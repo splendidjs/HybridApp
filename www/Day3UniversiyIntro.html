@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+  <!-- Good default declaration:
+  * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+  * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+  * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+      * Enable inline JS: add 'unsafe-inline' to default-src
+      * Enable eval(): add 'unsafe-eval' to default-src
+  * Create your own at http://cspisawesome.com
+  -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css"/>
+
+    <style>
+      #pic_univ{
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        -webkit-transition-property: width;
+        -webkit-transition-duration: .3s;
+
+      }
+
+      .small{
+        width: 30%;
+      }
+
+      .large{
+        width:100%
+      }
+
+      .clear_both{
+        clear: both;
+      }
+
+      .bold_style{
+        font-weight:bold;
+        color: #950000;
+      }
+
+    </style>
+</head>
+<body>
+  <div data-role="page" id="intro">
+    <div data-role="header" data-theme = "b">
+      <a href="index.html" rel="external" data-icon="home" data-direction="reverse" class=""ui-btn-left>Home </a>
+      <h1> 대학교 소개</h1>
+    </div>
+    <div data-role="content" data-theme = "c">
+      <img class="small" id="pic_univ" src="img/thumb/ca01.jpg" alt="소개">
+      <h1> <strong class ="bold_sytle"> 시대정신 </strong>을 선도하는 열린 하문 공동체 입니다.</h1>
+      <div class ="clear_both">
+        <p> 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+          가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하 가나다라마사아자차카타파하
+
+        </p>
+        <p> 마무리
+        </p>
+      </div>
+    </div>
+    <div data-role="footer">
+        <h2>버추얼 대학교</h2>
+    </div>
+  </div>
+
+      <!-- <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      -->
+      <script src="jquery.mobile-1.4.5/demos/js/jquery.js"></script>
+      <script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+      <!--
+      <script type="text/javascript">
+          app.initialize();
+      </script>
+      -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+        var picUniv = $("#pic_univ");
+        picUniv.data("flag","false");
+
+        picUniv.click(function(){
+          var bFlag = picUniv.data("flag");
+          if(bFlag == "false"){
+            bFlag ="true";
+            picUniv.removeClass("small");
+            picUniv.addClass("large");
+          }else{
+            bFlag ="false";
+            picUniv.removeClass("large");
+            picUniv.addClass("small");
+          }
+          picUniv.data("flag",bFlag);
+        });
+      });
+      </script>
+</body>
+</html>
